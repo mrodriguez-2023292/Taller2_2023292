@@ -17,7 +17,7 @@ JWT_SECRET=<tu_secreto_jwt>
 ### Citas
 
 - **Crear Cita**
-  - **URL:** `/appointment/createAppointment
+  - **URL:** `/api/appointment/createAppointment`
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
@@ -32,7 +32,7 @@ JWT_SECRET=<tu_secreto_jwt>
 ### Usuarios
 
 - **Registrar Usuario**
-  - **URL:** `/auth/register`
+  - **URL:** `/api/auth/register`
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
@@ -45,7 +45,7 @@ JWT_SECRET=<tu_secreto_jwt>
     ```
 
 - **Iniciar Sesión**
-  - **URL:** `/api/users/login`
+  - **URL:** `/api/auth/login`
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
@@ -56,15 +56,15 @@ JWT_SECRET=<tu_secreto_jwt>
     ```
 
 - **Obtener Usuario por ID**
-  - **URL:** `/api/users/:uid`
+  - **URL:** `/api/user/findUser/:uid`
   - **Método:** `GET`
 
 - **Eliminar Usuario**
-  - **URL:** `/api/users/:uid`
+  - **URL:** `/api/user/deleteUser/:uid`
   - **Método:** `DELETE`
 
 - **Actualizar Contraseña del Usuario**
-  - **URL:** `/api/users/:uid/password`
+  - **URL:** `/api/user/updatePassword/:uid`
   - **Método:** `PUT`
   - **Cuerpo:**
     ```json
@@ -76,53 +76,67 @@ JWT_SECRET=<tu_secreto_jwt>
 ### Mascotas
 
 - **Registrar Mascota**
-  - **URL:** `/api/pets/register`
+  - **URL:** `/api/pet/addPet`
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
     {
       "name": "string",
+      "description": "string",
       "age": "number",
       "type": "string",
-      "breed": "string"
+      "keeper": "string"
     }
     ```
 
 - **Obtener Mascota por ID**
-  - **URL:** `/api/pets/:pid`
+  - **URL:** `/api/pet/findPet/:id`
   - **Método:** `GET`
 
 - **Eliminar Mascota**
-  - **URL:** `/api/pets/:pid`
+  - **URL:** `/api/pet/deletePet/:id`
   - **Método:** `DELETE`
-
-- **Actualizar Información de la Mascota**
-  - **URL:** `/api/pets/:pid`
-  - **Método:** `PUT`
-  - **Cuerpo:**
-    ```json
-    {
-      "name": "string",
-      "age": "number",
-      "type": "string",
-      "breed": "string"
-    }
-    ```
 
 ## Funcionalidades Adicionales
 
 Las siguientes funcionalidades necesitan ser desarrolladas:
 
 1. **Actualizar Foto del Usuario**
-   - Descripción: Implementar funcionalidad para actualizar la foto de perfil del usuario.
+  - **URL:** `/api/user/updateImage/:uid`
+  - **Método:** `PATCH`
+  - **Cuerpo:**
+    ```json
+    ![image](https://github.com/user-attachments/assets/67e246f0-e4f1-49d5-b83b-3de337de5fe7)
+    
+    ```
 
 2. **Listar Citas**
-   - Descripción: Implementar funcionalidad para listar todas las citas de un usuario.
-     /appointment/
+  - **URL:** `/api/appointment/`
+  - **Método:** `GET`
+  - **Resultado:**
+    ```json
+    ![image](https://github.com/user-attachments/assets/519ee6b6-6d3d-4094-93f4-492978a59e15)
+  
+    ```
 
 3. **Actualizar Cita**
-   - Descripción: Implementar funcionalidad para actualizar una cita existente.
+  - **URL:** `/api/appointment/updateAppointment/:id`
+  - **Método:** `PUT`
+  - **Cuerpo:**
+    ```json
+    {
+      "date": "2023-10-15T14:48:00.000Z", <-- Nueva fecha
+      "status": "CREATED", <-- Nuevo estatus
+      "pet": "<pet_id>", <-- Nuevo id
+      "user": "<user_id>" <-- Nuevo id
+    }
+    ```
      
 4. **Cancelar Cita**
-   - Descripción: Implementar funcionalidad para cancelar una cita existente.
-      /appointment/cancelAppointment/id
+  - **URL:** `/api/appointment/cancelAppointment/:id`
+  - **Método:** `DELETE`
+  - **Cuerpo:**
+    ```json
+    ![image](https://github.com/user-attachments/assets/e6a01e13-fe97-4a3d-ab96-92b911044834)
+
+    ```
