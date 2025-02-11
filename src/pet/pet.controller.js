@@ -7,7 +7,7 @@ import Pet from './pet.model.js';
 export const savePet = async (req, res) => {
     try {
         const data = req.body;
-        const user = await User.findOne({ email: data.email });
+        const user = await User.findOne({ id: data._id });
 
         if (!user) {
             return res.status(404).json({ 

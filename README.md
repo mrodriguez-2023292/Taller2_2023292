@@ -17,7 +17,7 @@ JWT_SECRET=<tu_secreto_jwt>
 ### Citas
 
 - **Crear Cita**
-  - **URL:** `/api/appointments/createAppointment`
+  - **URL:** `/appointment/createAppointment
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
@@ -32,7 +32,7 @@ JWT_SECRET=<tu_secreto_jwt>
 ### Usuarios
 
 - **Registrar Usuario**
-  - **URL:** `/api/users/register`
+  - **URL:** `/auth/register`
   - **Método:** `POST`
   - **Cuerpo:**
     ```json
@@ -118,9 +118,11 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
 
 2. **Listar Citas**
    - Descripción: Implementar funcionalidad para listar todas las citas de un usuario.
+     /appointment/
 
 3. **Actualizar Cita**
    - Descripción: Implementar funcionalidad para actualizar una cita existente.
-
+     
 4. **Cancelar Cita**
    - Descripción: Implementar funcionalidad para cancelar una cita existente.
+      /appointment/cancelAppointment/id

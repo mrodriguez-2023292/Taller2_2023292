@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { getUserById, getUsers, deleteUser, updatePassword, updateUser, updateProfilePicture } from "./user.controller.js"
+import { getUserById, getUsers, deleteUser, updatePassword, updateProfilePicture } from "./user.controller.js"
 import { getUserByIdValidator, deleteUserValidator, updatePasswordValidator, updateUserValidator, updateProfilePictureValidator } from "../middlewares/user-validators.js"
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js"
 
@@ -13,8 +13,6 @@ router.delete("/deleteUser/:uid", deleteUserValidator, deleteUser)
 
 router.patch("/updatePassword/:uid", updatePasswordValidator, updatePassword)
 
-router.put("/updateUser/:uid", updateUserValidator, updateUser)
-
-router.patch("/updateProfilePicture/:uid", uploadProfilePicture.single("profilePicture"), updateProfilePictureValidator, updateProfilePicture)
+router.patch("/updateImage/:uid", uploadProfilePicture.single("profilePicture"), updateProfilePictureValidator,  updateProfilePicture)
 
 export default router

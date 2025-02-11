@@ -8,7 +8,7 @@ export const createPetValidator = [
     body("description").notEmpty().withMessage("La descripción es requerida"),
     body("age").isInt({ min: 0 }).withMessage("La edad debe ser un número entero positivo"),
     body("type").notEmpty().withMessage("El tipo es requerido"),
-    body("email").isEmail().withMessage("El correo del propietario es requerido y debe ser válido"),
+    body("keeper").isMongoId().withMessage("No es un ID válido de MongoDB"),
     validarCampos,
     handleErrors
 ];

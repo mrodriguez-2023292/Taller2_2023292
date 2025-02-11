@@ -1,8 +1,8 @@
-import { hash } from "argon2";
+import { hash, verify } from "argon2";
 import User from "./user.model.js"
 import fs from "fs/promises"
 import { join, dirname } from "path"
-import { fileURLToPath } from "url"
+import { fileURLToPath} from "url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -85,9 +85,9 @@ export const updatePassword = async (req, res) => {
 
         const user = await User.findById(uid)
 
-        const matchOldAndNewPassword = await verify(user.password, newPassword)
+        const matchPassword = await verify(user.password, newPassword)
 
-        if(matchOldAndNewPassword){
+        if(matchPassword){
             return res.status(400).json({
                 success: false,
                 message: "La nueva contraseña no puede ser igual a la anterior"
@@ -96,13 +96,12 @@ export const updatePassword = async (req, res) => {
 
         const encryptedPassword = await hash(newPassword)
 
-        await User.findByIdAndUpdate(uid, {password: encryptedPassword}, {new: true})
+        await User.findByIdAndUpdate(uid, {password: encryptedPassword})
 
         return res.status(200).json({
             success: true,
             message: "Contraseña actualizada",
         })
-
     }catch(err){
         return res.status(500).json({
             success: false,
@@ -140,7 +139,7 @@ export const updateProfilePicture = async (req, res) => {
 
         if(!newProfilePicture){
             return res.status(400).json({
-                success: false,
+                succes: false,
                 message: "No hay archivo en la petición"
             })
         }
@@ -156,13 +155,14 @@ export const updateProfilePicture = async (req, res) => {
         await user.save()
 
         return res.status(200).json({
-            success: true,
-            message: "Foto actualizada",
-            profilePicture: user.profilePicture,
+            succes: true,
+            message:"Foto actualizada",
+            profilePicture: user.profilePicture
         })
+
     }catch(err){
         return res.status(500).json({
-            success: false,
+            succes: false,
             message: "Error al actualizar la foto",
             error: err.message
         })
