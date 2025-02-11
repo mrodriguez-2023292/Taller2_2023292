@@ -105,19 +105,13 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
   - **URL:** `/api/user/updateImage/:uid`
   - **Método:** `PATCH`
   - **Cuerpo:**
-    ```json
     ![image](https://github.com/user-attachments/assets/67e246f0-e4f1-49d5-b83b-3de337de5fe7)
     
-    ```
-
 2. **Listar Citas**
   - **URL:** `/api/appointment/`
   - **Método:** `GET`
   - **Resultado:**
-    ```json
     ![image](https://github.com/user-attachments/assets/519ee6b6-6d3d-4094-93f4-492978a59e15)
-  
-    ```
 
 3. **Actualizar Cita**
   - **URL:** `/api/appointment/updateAppointment/:id`
@@ -136,7 +130,4 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
   - **URL:** `/api/appointment/cancelAppointment/:id`
   - **Método:** `DELETE`
   - **Cuerpo:**
-    ```json
     ![image](https://github.com/user-attachments/assets/e6a01e13-fe97-4a3d-ab96-92b911044834)
-
-    ```
