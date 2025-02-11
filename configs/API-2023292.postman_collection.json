@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4d0660a2-1102-48ba-b0f0-a06d694ab130",
-		"name": "API-Vespertina",
+		"_postman_id": "9ed13e92-55d3-44dc-bf3b-5535b2c2c970",
+		"name": "API-2023292",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "12536023"
+		"_exporter_id": "41830113"
 	},
 	"item": [
 		{
@@ -19,32 +19,32 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Joséss",
+									"value": "Mario",
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "Balenciagass",
+									"value": "Rodriguez",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "jbalenciaga3",
+									"value": "mairo",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
+									"value": "mariorodriguez@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "22160098",
+									"value": "36499945",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "1234",
+									"value": "n3N@1234",
 									"type": "text"
 								},
 								{
@@ -55,7 +55,7 @@
 								{
 									"key": "profilePicture",
 									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+									"src": "/C:/Users/Mario/Downloads/alumno.png"
 								}
 							]
 						},
@@ -69,51 +69,15 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Joséss",
-									"type": "text"
-								},
-								{
-									"key": "surname",
-									"value": "Balenciagass",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "jbalenciaga3",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "22160098",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "ADMIN_ROLE",
-									"type": "text"
-								},
-								{
-									"key": "profilePicture",
-									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"mairo\",\r\n    \"password\":\"n3N@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/auth/register"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/auth/login"
 					},
 					"response": []
 				}
@@ -126,24 +90,26 @@
 					"name": "Buscar un usuario por ID",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/findUser/67aaba62f876f0069fedfcd8"
 					},
 					"response": []
 				},
 				{
-					"name": "Eliminar ususario",
+					"name": "Eliminar usuario",
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/findUser/679cedc00c50f098afb74105"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/deleteUser/67aaba62f876f0069fedfcd8"
 					},
 					"response": []
 				},
 				{
-					"name": "Listar Usuarios",
+					"name": "Listar usuarios",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/"
 					},
 					"response": []
 				},
@@ -154,19 +120,19 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"newPassword\":\"12345678\"\r\n}",
+							"raw": "{\r\n    \"newPassword\":\"q!@D1023\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updatePassword/679cef6b0a9ac952c4552d76"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updatePassword/67aaba62f876f0069fedfcd8"
 					},
 					"response": []
 				},
 				{
-					"name": "Actualizar usuario",
+					"name": "Actualizar foto del usuario",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -229,7 +195,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/findPet/67a12b26af19e9044c8341da"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/findPet/67aac913e845b4c257d7119c"
 					},
 					"response": []
 				},
@@ -238,7 +204,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/deletePet/679cedc00c50f098afb74105"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/deletePet/67aac913e845b4c257d7119c"
 					},
 					"response": []
 				},
@@ -246,7 +212,8 @@
 					"name": "Listar mascotas",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/"
 					},
 					"response": []
 				},
@@ -256,51 +223,15 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Joséss",
-									"type": "text"
-								},
-								{
-									"key": "surname",
-									"value": "Balenciagass",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "jbalenciaga3",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "22160098",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "ADMIN_ROLE",
-									"type": "text"
-								},
-								{
-									"key": "profilePicture",
-									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Tobie\",\r\n    \"description\":\"Es el mejor\",\r\n    \"age\":\"4\",\r\n    \"type\":\"French\",\r\n    \"keeper\":\"67aaba62f876f0069fedfcd8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/auth/register"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/pet/addPet"
 					},
 					"response": []
 				}
@@ -313,7 +244,53 @@
 					"name": "Agregar una cita",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2025-02-11T03:50:43.976Z\",\r\n    \"status\":\"ACCEPTED\",\r\n    \"pet\":\"67aac913e845b4c257d7119c\",\r\n    \"user\":\"67aaba62f876f0069fedfcd8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/appointment/createAppointment"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar citas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/appointment/"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar cita",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2005-02-11T03:50:43.976Z\",\r\n    \"status\":\"CREATED\",\r\n    \"pet\":\"67aac913e845b4c257d7119c\",\r\n    \"user\":\"67aaba62f876f0069fedfcd8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/appointment/updateAppointment/67aac9d2e845b4c257d711ad"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cita",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/appointment/cancelAppointment/67aac9d2e845b4c257d711ad"
 					},
 					"response": []
 				}
