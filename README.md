@@ -131,4 +131,5 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
   - **URL:** `/api/appointment/cancelAppointment/:id`
   - **Método:** `DELETE`
   - **Cuerpo:**
+    
     ![image](https://github.com/user-attachments/assets/e6a01e13-fe97-4a3d-ab96-92b911044834)
