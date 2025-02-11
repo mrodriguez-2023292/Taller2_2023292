@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9ed13e92-55d3-44dc-bf3b-5535b2c2c970",
+		"_postman_id": "0d896db7-2dbc-4d13-b87a-07b99ed6fe69",
 		"name": "API-2023292",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "41830113"
@@ -134,46 +134,11 @@
 				{
 					"name": "Actualizar foto del usuario",
 					"request": {
-						"method": "PUT",
+						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
-								{
-									"key": "name",
-									"value": "Joséss",
-									"type": "text"
-								},
-								{
-									"key": "surname",
-									"value": "Balenciagass",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "jbalenciaga3",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "jbalenciaga3@gmail.es",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "22160098",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "1234",
-									"type": "text"
-								},
-								{
-									"key": "role",
-									"value": "ADMIN_ROLE",
-									"type": "text"
-								},
 								{
 									"key": "profilePicture",
 									"type": "file",
@@ -181,7 +146,7 @@
 								}
 							]
 						},
-						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updateUser"
+						"url": "http://127.0.0.1:3001/adoptionSystem/v1/user/updateImage/67aaba62f876f0069fedfcd8"
 					},
 					"response": []
 				}
