@@ -111,6 +111,7 @@ Las siguientes funcionalidades necesitan ser desarrolladas:
   - **URL:** `/api/appointment/`
   - **Método:** `GET`
   - **Resultado:**
+    
     ![image](https://github.com/user-attachments/assets/519ee6b6-6d3d-4094-93f4-492978a59e15)
 
 3. **Actualizar Cita**
